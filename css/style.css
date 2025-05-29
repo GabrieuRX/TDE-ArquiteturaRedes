@@ -88,6 +88,16 @@ body {
 .ph {
   font-size: 30px;
 }
+.menu-container a,
+.menu-container a:focus,
+.menu-container a:hover,
+.menu-container a button,
+.menu-container a button:focus,
+.menu-container a button:hover,
+.menu-container a button * {
+  text-decoration: none;
+  outline: none;
+}
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(30px); }
