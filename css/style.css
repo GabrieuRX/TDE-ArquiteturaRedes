@@ -1,60 +1,115 @@
 * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body {
-      height: 100vh;
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-    }
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #0f2027, #1f4d99);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+}
 
-    .menu-container {
-      background: rgba(255, 255, 255, 0.07);
-      padding: 60px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-      text-align: center;
-      backdrop-filter: blur(8px);
-      max-width: 500px;
-      width: 90%;
-    }
+.bg-decorator,
+.bg-decorator2 {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 80%);
+  z-index: 0;
+  animation: float 10s ease-in-out infinite;
+}
 
-    .menu-container h1 {
-      font-size: 32px;
-      margin-bottom: 40px;
-      text-shadow: 1px 1px 2px #000;
-    }
+.bg-decorator {
+  top: 10%;
+  left: 5%;
+}
 
-    .menu-container a button {
-      padding: 14px 28px;
-      font-size: 18px;
-      background-color: #ffffff;
-      color: #1e3c72;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-      transition: all 0.3s ease;
-    }
+.bg-decorator2 {
+  bottom: 10%;
+  right: 5%;
+  animation-delay: 5s;
+}
 
-    .menu-container a button:hover {
-      background-color: #d6e8ff;
-      transform: scale(1.05);
-    }
+.menu-container {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 60px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  backdrop-filter: blur(10px);
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  z-index: 1;
+}
 
-    @media (max-width: 500px) {
-      .menu-container h1 {
-        font-size: 24px;
-      }
+.menu-container h1 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 2px #000;
+}
 
-      .menu-container a button {
-        font-size: 16px;
-        padding: 12px 24px;
-      }
-    }
+.icon-wrapper {
+  font-size: 60px;
+  margin-bottom: 20px;
+  color: #89c2ff;
+}
+
+.menu-container a button {
+  padding: 14px 32px;
+  font-size: 18px;
+  background: linear-gradient(135deg, #1e90ff, #63b3ed);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 6px 18px rgba(25, 23, 155, 0.527);
+  transition: all 0.3s ease;
+}
+
+.menu-container a button:hover {
+  background: linear-gradient(135deg, #63b3ed, #1e90ff);
+  transform: scale(1.05);
+}
+
+.ph {
+  font-size: 30px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.fade-in {
+  animation: fadeIn 1.2s ease;
+}
+
+@media (max-width: 500px) {
+  .menu-container h1 {
+    font-size: 24px;
+  }
+
+  .menu-container a button {
+    font-size: 16px;
+    padding: 12px 24px;
+  }
+}
